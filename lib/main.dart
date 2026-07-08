@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:friuts/core/helper/on_generate_route.dart';
+import 'package:friuts/core/services/shared_preferences_singleton.dart';
 import 'package:friuts/features/splash/views/splash_view.dart';
 
 import 'generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await prehs.init();
   runApp(const MyApp());
 }
 

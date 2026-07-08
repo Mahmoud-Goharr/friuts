@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:friuts/constants.dart';
 import 'package:friuts/core/assets.dart';
+import 'package:friuts/core/services/shared_preferences_singleton.dart';
+import 'package:friuts/features/auth/views/login_view.dart';
 import 'package:friuts/features/onboarding/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -33,9 +36,17 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-    void excuteNaviagtion() {
-      Future.delayed(const Duration(seconds: 3), () {
-        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
-      });
+  void excuteNaviagtion() {
+    Future.delayed(const Duration(seconds: 3), () {
+    bool isOnBoardingViewSeen = prehs.getbool(kIsOnBoardingViewSeen);
+    if (isOnBoardingViewSeen) { 
+      Navigator.of(context).pushReplacementNamed(LoginView.routeName);
     }
+    
+    else {
+      Navigator.of(context).pushReplacementNamed(OnBoardingView.routeName);
+    }
+    });
+    
+  }
 }
