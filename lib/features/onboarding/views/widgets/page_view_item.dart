@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:friuts/core/utils/app_text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -8,12 +9,14 @@ class PageViewItem extends StatelessWidget {
     required this.description,
     required this.image,
     required this.backgroundimg,
+    required this.isVisible,
   });
 
   final Widget title;
   final String description;
   final String image;
   final String backgroundimg;
+  final bool isVisible; // Add a property to indicate if it's the last page
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,18 @@ class PageViewItem extends StatelessWidget {
                 right: 0,
                 child: Center(child: SvgPicture.asset(image)),
               ),
-              Padding(padding: const EdgeInsets.all(21.0), child: Text('تخط')),
+              Visibility(
+                visible: isVisible, // Adjust the condition based on your needs
+                child: Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Text(
+                    'تخط',
+                    style: TextStyles.regular16.copyWith(
+                      color: const Color(0xFF949D9E),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -42,8 +56,14 @@ class PageViewItem extends StatelessWidget {
         title,
         SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 45),
-          child: Text(description, textAlign: TextAlign.center),
+          padding: const EdgeInsets.symmetric(horizontal: 37),
+          child: Text(
+            description,
+            style: TextStyles.semiBold13.copyWith(
+              color: const Color(0xFF4E5556),
+            ),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

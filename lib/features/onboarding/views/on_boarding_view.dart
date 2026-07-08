@@ -8,7 +8,7 @@ static const  routeName = 'onBoardingView';
   Widget build(BuildContext context) {
     
     return const Scaffold(
-      body: OnboardingViewBody(),
+      body: SafeArea(child: OnboardingViewBody()),
     );
   }
 }
