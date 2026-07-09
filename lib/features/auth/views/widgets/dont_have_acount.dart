@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:friuts/core/utils/app_colors.dart';
-import 'package:friuts/core/utils/app_text_styles.dart';
+import 'package:fruitify/core/utils/app_colors.dart';
+import 'package:fruitify/core/utils/app_text_styles.dart';
 
 class DontHaveAccount extends StatelessWidget {
   const DontHaveAccount({super.key, required this.text1, required this.text2, required this.ontap,});

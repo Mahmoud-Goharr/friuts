@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:friuts/constants.dart';
-import 'package:friuts/core/assets.dart';
-import 'package:friuts/core/utils/app_colors.dart';
-import 'package:friuts/core/utils/app_text_styles.dart';
-import 'package:friuts/core/widgets/custom_bottom.dart';
-import 'package:friuts/core/widgets/custom_text_form_field.dart';
-import 'package:friuts/features/auth/views/sign_up_view.dart';
-import 'package:friuts/features/auth/views/widgets/dont_have_acount.dart';
-import 'package:friuts/features/auth/views/widgets/or_divider.dart';
-import 'package:friuts/features/auth/views/widgets/social_login_button.dart';
+import 'package:fruitify/constants.dart';
+import 'package:fruitify/core/assets.dart';
+import 'package:fruitify/core/utils/app_colors.dart';
+import 'package:fruitify/core/utils/app_text_styles.dart';
+import 'package:fruitify/core/widgets/custom_bottom.dart';
+import 'package:fruitify/core/widgets/custom_text_form_field.dart';
+import 'package:fruitify/features/auth/views/sign_up_view.dart';
+import 'package:fruitify/features/auth/views/widgets/dont_have_acount.dart';
+import 'package:fruitify/features/auth/views/widgets/or_divider.dart';
+import 'package:fruitify/features/auth/views/widgets/social_login_button.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});

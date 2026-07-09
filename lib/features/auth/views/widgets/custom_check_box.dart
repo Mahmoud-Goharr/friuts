@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:friuts/core/assets.dart';
+import 'package:fruitify/core/assets.dart';
 
 
 import '../../../../../core/utils/app_colors.dart';

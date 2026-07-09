@@ -1,11 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:friuts/constants.dart';
-import 'package:friuts/core/services/shared_preferences_singleton.dart';
-import 'package:friuts/core/utils/app_colors.dart';
-import 'package:friuts/core/widgets/custom_bottom.dart';
-import 'package:friuts/features/auth/views/login_view.dart';
-import 'package:friuts/features/onboarding/views/widgets/onboarding_page_view.dart';
+import 'package:fruitify/constants.dart';
+import 'package:fruitify/core/services/shared_preferences_singleton.dart';
+import 'package:fruitify/core/utils/app_colors.dart';
+import 'package:fruitify/core/widgets/custom_bottom.dart';
+import 'package:fruitify/features/auth/views/login_view.dart';
+import 'package:fruitify/features/onboarding/views/widgets/onboarding_page_view.dart';
 
 class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});

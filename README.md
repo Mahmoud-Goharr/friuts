@@ -1,4 +1,4 @@
-# friuts
+# fruitify
 
 A new Flutter project.
 

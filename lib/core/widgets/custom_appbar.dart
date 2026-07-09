@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:friuts/core/utils/app_text_styles.dart';
+import 'package:fruitify/core/utils/app_text_styles.dart';
 
 AppBar buildAppbar(BuildContext context, {required String title}) {
   return AppBar(

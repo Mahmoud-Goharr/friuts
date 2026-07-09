@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:friuts/core/assets.dart';
-import 'package:friuts/core/utils/app_colors.dart';
-import 'package:friuts/core/utils/app_text_styles.dart';
-import 'package:friuts/features/onboarding/views/widgets/page_view_item.dart';
+import 'package:fruitify/core/assets.dart';
+import 'package:fruitify/core/utils/app_colors.dart';
+import 'package:fruitify/core/utils/app_text_styles.dart';
+import 'package:fruitify/features/onboarding/views/widgets/page_view_item.dart';
 
 class OnboardingPageView extends StatelessWidget {
   const OnboardingPageView({super.key, required this.pageController});
@@ -36,7 +36,7 @@ class OnboardingPageView extends StatelessWidget {
             ],
           ),
           description:
-              'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
+              'اكتشف تجربة تسوق فريدة مع Fruitify. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
 
           image: Assets.assetsImagesPageViewItem1Image,
           backgroundimg: Assets.assetsImagesPageViewItem1BackgroundImage,
@@ -47,7 +47,7 @@ class OnboardingPageView extends StatelessWidget {
           isVisible: false, // Set visibility based on the current page index
           title: Text('ابحث وتسوق', style: TextStyles.bold23),
           description:
-              'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
+              'اكتشف تجربة تسوق فريدة مع Fruitify. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
           image: Assets.assetsImagesPageViewItem2Image,
           backgroundimg: Assets.assetsImagesPageViewItem2BackgroundImage,
         ),

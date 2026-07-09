@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:friuts/core/helper/on_generate_route.dart';
-import 'package:friuts/core/services/shared_preferences_singleton.dart';
-import 'package:friuts/core/utils/app_colors.dart';
-import 'package:friuts/features/splash/views/splash_view.dart';
+import 'package:fruitify/core/helper/on_generate_route.dart';
+import 'package:fruitify/core/services/shared_preferences_singleton.dart';
+import 'package:fruitify/core/utils/app_colors.dart';
+import 'package:fruitify/features/splash/views/splash_view.dart';
 
 import 'generated/l10n.dart';
 

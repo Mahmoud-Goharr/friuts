@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:friuts/constants.dart';
-import 'package:friuts/core/services/shared_preferences_singleton.dart';
-import 'package:friuts/core/utils/app_text_styles.dart';
+import 'package:fruitify/constants.dart';
+import 'package:fruitify/core/services/shared_preferences_singleton.dart';
+import 'package:fruitify/core/utils/app_text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({

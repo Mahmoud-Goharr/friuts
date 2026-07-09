@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:friuts/constants.dart';
-import 'package:friuts/core/widgets/custom_bottom.dart';
-import 'package:friuts/core/widgets/custom_text_form_field.dart';
-import 'package:friuts/features/auth/views/login_view.dart';
-import 'package:friuts/features/auth/views/widgets/dont_have_acount.dart';
-import 'package:friuts/features/auth/views/widgets/terms_and_conditions.dart';
+import 'package:fruitify/constants.dart';
+import 'package:fruitify/core/widgets/custom_bottom.dart';
+import 'package:fruitify/core/widgets/custom_text_form_field.dart';
+import 'package:fruitify/features/auth/views/login_view.dart';
+import 'package:fruitify/features/auth/views/widgets/dont_have_acount.dart';
+import 'package:fruitify/features/auth/views/widgets/terms_and_conditions.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});

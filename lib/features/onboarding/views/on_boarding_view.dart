@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:friuts/features/onboarding/views/widgets/onboarding_view_body.dart';
+import 'package:fruitify/features/onboarding/views/widgets/onboarding_view_body.dart';
 
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
