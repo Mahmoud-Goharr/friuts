@@ -5,6 +5,7 @@ import 'package:friuts/core/utils/app_colors.dart';
 import 'package:friuts/core/utils/app_text_styles.dart';
 import 'package:friuts/core/widgets/custom_bottom.dart';
 import 'package:friuts/core/widgets/custom_text_form_field.dart';
+import 'package:friuts/features/auth/views/sign_up_view.dart';
 import 'package:friuts/features/auth/views/widgets/dont_have_acount.dart';
 import 'package:friuts/features/auth/views/widgets/or_divider.dart';
 import 'package:friuts/features/auth/views/widgets/social_login_button.dart';
@@ -55,7 +56,13 @@ class LoginViewBody extends StatelessWidget {
 
             const SizedBox(height: 33),
 
-            const DontHaveAccount(),
+            DontHaveAccount(
+              ontap: () {
+                Navigator.pushNamed(context, SignUpView.routeName);
+              },
+              text1: 'لا تمتلك حساب؟',
+              text2: 'قم بإنشاء حساب',
+            ),
 
             const SizedBox(height: 33),
 
@@ -84,8 +91,6 @@ class LoginViewBody extends StatelessWidget {
               image: Assets.assetsImagesFacebookIcon,
               title: 'تسجيل بواسطة فيسبوك',
             ),
-          
-          
           ],
         ),
       ),

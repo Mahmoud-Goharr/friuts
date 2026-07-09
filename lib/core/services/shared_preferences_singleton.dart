@@ -10,11 +10,11 @@ class prehs {
   
   }
 
-  static setbool(String key, bool value) {
+  static void setbool(String key, bool value) {
     _instance.setBool(key, value);
   }
 
-  static getbool(String key) {
+  static bool getbool(String key) {
     return _instance.getBool(key) ?? false;
   }
 }
