@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:friuts/core/utils/app_colors.dart';
+import 'package:friuts/core/utils/app_text_styles.dart';
 
 class CustomBottom extends StatelessWidget {
   const CustomBottom({super.key, required this.onPressed, required this.text});
@@ -21,7 +22,8 @@ class CustomBottom extends StatelessWidget {
         ),
 
         onPressed: onPressed,
-        child: Text(text),
+        child: Text(text, style: TextStyles.bold16),
+        
       ),
     );
   }
