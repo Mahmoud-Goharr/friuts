@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruitify/core/assets.dart';
 import 'package:fruitify/core/utils/app_colors.dart';
 import 'package:fruitify/core/utils/app_text_styles.dart';
-import 'package:fruitify/features/onboarding/views/widgets/page_view_item.dart';
+import 'package:fruitify/features/onboarding/presentation/views/widgets/page_view_item.dart';
 
 class OnboardingPageView extends StatelessWidget {
   const OnboardingPageView({super.key, required this.pageController});

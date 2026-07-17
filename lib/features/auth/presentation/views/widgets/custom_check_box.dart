@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fruitify/core/assets.dart';
 
 
-import '../../../../../core/utils/app_colors.dart';
+import '../../../../../../core/utils/app_colors.dart';
 
 class CustomCheckBox extends StatelessWidget {
   const CustomCheckBox(
