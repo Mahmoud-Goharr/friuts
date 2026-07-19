@@ -1,4 +1,6 @@
+import 'package:fruitify/core/services/database_service.dart';
 import 'package:fruitify/core/services/supabase_auth_service.dart';
+import 'package:fruitify/core/services/supabase_database_service.dart';
 import 'package:fruitify/features/auth/data/repos/auth_rebo_impl.dart';
 import 'package:fruitify/features/auth/doamin/repos/auth_rebo.dart';
 import 'package:get_it/get_it.dart';
@@ -11,9 +13,14 @@ void setupGetit() {
     SupabaseAuthService(Supabase.instance.client.auth),
   );
 
+  getIt.registerSingleton<DatabaseService>(
+    SupabaseDatabaseService(Supabase.instance.client),
+  );
+
   getIt.registerSingleton<AuthRepo>(
     AuthRepositoryImpl(
       supabaseAuthService: getIt<SupabaseAuthService>(),
+      databaseService: getIt<DatabaseService>(),
     ),
   );
 }

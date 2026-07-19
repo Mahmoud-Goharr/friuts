@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:developer';
-
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruitify/core/errors/exeption.dart';
 import 'package:fruitify/core/errors/supabase_exception_handler.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -9,7 +7,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseAuthService {
   final GoTrueClient _auth;
-
+  User? get currentUser => _auth.currentUser;
   final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
   bool _isInitialized = false;
 
@@ -119,7 +117,7 @@ class SupabaseAuthService {
     } on CustomException {
       rethrow;
     } catch (e, s) {
-      log('SupabaseAuthService.signInWithFacebook', error: e, stackTrace: s);
+      log('SupabaseAuthService.signInWithGoogle', error: e, stackTrace: s);
 
       print('==============================');
       print(e);
@@ -151,6 +149,7 @@ class SupabaseAuthService {
       await _auth.signInWithOAuth(
         OAuthProvider.facebook,
         redirectTo: 'com.example.friuts://login-callback',
+        scopes: 'email,public_profile',
       );
 
       final user = await completer.future.timeout(
@@ -164,19 +163,7 @@ class SupabaseAuthService {
         },
       );
 
-      // ==========================
-      // Debug
-      // ==========================
-
-      log('========== FACEBOOK LOGIN ==========');
-      log('User ID: ${user.id}');
-      log('Email: ${user.email}');
-      log('Current User: ${_auth.currentUser}');
-      log('Current Session: ${_auth.currentSession}');
-      log('App Metadata: ${user.appMetadata}');
-      log('User Metadata: ${user.userMetadata}');
-      log('Identities: ${user.identities}');
-      log('===================================');
+      log('Provider Token: ${_auth.currentSession?.providerToken}');
 
       return user;
     } catch (e, s) {

@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruitify/core/helper/snak_bar_failuer.dart';
 import 'package:fruitify/core/widgets/custom_progress_hud.dart';
 import 'package:fruitify/features/auth/presentation/cubits/log_in_.dart/log_in_cubit.dart';
-    import 'package:fruitify/features/auth/presentation/views/widgets/login_view_body.dart';
+import 'package:fruitify/features/auth/presentation/views/widgets/login_view_body.dart';
+import 'package:fruitify/features/home/presentation/views/home_view.dart';
 
 class LogInViewBodyConsumer extends StatelessWidget {
   const LogInViewBodyConsumer({super.key});
@@ -13,6 +14,7 @@ class LogInViewBodyConsumer extends StatelessWidget {
     return BlocConsumer<LogInCubit, LogInState>(
       listener: (context, state) {
         if (state is LogInSuccess) {
+          Navigator.pushNamedAndRemoveUntil((context), HomeView.routeName, (route) => false);
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(

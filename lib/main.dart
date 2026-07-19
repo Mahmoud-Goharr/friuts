@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruitify/core/helper/on_generate_route.dart';
 import 'package:fruitify/core/services/custom_bloc_observer.dart';
 import 'package:fruitify/core/services/get_it_service.dart';
@@ -14,7 +15,7 @@ import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = CustomBlocObserver()  ;
+  Bloc.observer = CustomBlocObserver();
   await dotenv.load(fileName: ".env");
   await Supabase.initialize(
     url: dotenv.env['SUPABASE_URL']!,
@@ -32,24 +33,33 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Cairo',
-        scaffoldBackgroundColor: Colors.white,
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp(
+          theme: ThemeData(
+            fontFamily: 'Cairo',
+            scaffoldBackgroundColor: Colors.white,
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: AppColors.primaryColor,
+            ),
+          ),
 
-      localizationsDelegates: [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      locale: const Locale('ar'),
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoute,
-      initialRoute: SplashView.routeName,
+          localizationsDelegates: [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          locale: const Locale('ar'),
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: onGenerateRoute,
+          initialRoute: SplashView.routeName,
+        );
+      },
     );
   }
 }

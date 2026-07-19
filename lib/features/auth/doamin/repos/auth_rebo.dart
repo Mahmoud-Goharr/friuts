@@ -3,6 +3,7 @@ import 'package:fruitify/core/errors/failure.dart';
 import 'package:fruitify/features/auth/doamin/entities/user_entity.dart';
 
 abstract class AuthRepo {
+  bool isLoggedIn();
   Future<Either<Failure, UserEntity>> signUpWithEmail({
     required String email,
     required String password,
@@ -13,9 +14,6 @@ abstract class AuthRepo {
     required String email,
     required String password,
   });
-
-
- 
 
   Future<Either<Failure, UserEntity>> logInWithGoogle();
 
